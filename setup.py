@@ -5,6 +5,7 @@ setup(
     version='0.1',
     description='Helps with setting up envs quickly',
     url='https://github.com/tklijnsma/toscript.git',
+    download_url='https://github.com/tklijnsma/toscript/archive/v0.tar.gz',
     author='Thomas Klijnsma',
     author_email='thomasklijnsma@gmail.com',
     packages=['toscript'],
