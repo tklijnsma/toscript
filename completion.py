@@ -11,10 +11,10 @@ class Completer(object):
 
     def completion_hook(self, cmd, curr_word, prev_word):
         if not self.goer.exists_toscriptdir():
-            print '\nNo directory \'{0}\'\n'.format(self.goer.toscriptdir)
+            print('\nNo directory \'{0}\'\n'.format(self.goer.toscriptdir))
             return []
         elif not self.goer.has_scripts_toscriptdir():
-            print '\nNo scripts found in \'{0}\'\n'.format(self.goer.toscriptdir)
+            print('\nNo scripts found in \'{0}\'\n'.format(self.goer.toscriptdir))
             return []
         elif prev_word == 'to' or prev_word == '--test':
             potential_matches = self.goer.toscripts_basenames
@@ -27,7 +27,7 @@ def main():
     completer = Completer()
     results = completer.completion_hook(*sys.argv[1:])
     if len(results):
-          print '\n'.join(results)
+          print('\n'.join(results))
 
 if __name__ == "__main__":
     main()

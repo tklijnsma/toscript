@@ -1,3 +1,4 @@
+from __future__ import print_function
 import os
 import glob
 import sys
@@ -32,13 +33,13 @@ class ToGoer(object):
 
     def get_script(self, basename):
         if not self.exists_toscriptdir():
-            print 'No directory \'{0}\''.format(self.toscriptdir)
+            print('No directory \'{0}\''.format(self.toscriptdir))
             sys.exit(1)
         elif not basename in self.toscripts_basenames:
-            print 'No script corresponds with \'{0}\''.format(basename)
-            print 'Registered scripts: {0}'.format(
+            print('No script corresponds with \'{0}\''.format(basename))
+            print('Registered scripts: {0}'.format(
                 ', '.join(self.toscripts_basenames)
-                )
+                ))
             sys.exit(1)
         else:
             script = self.toscripts[self.toscripts_basenames.index(basename)]
@@ -46,10 +47,10 @@ class ToGoer(object):
             return script
 
     def print_contents(self, script):
-        print 'Would now run \'source {0}\''.format(script)
-        print 'Contents of {0}:\n'.format(script)
+        print('Would now run \'source {0}\''.format(script))
+        print('Contents of {0}:\n'.format(script))
         with open(script, 'r') as fp:
-            print fp.read()
+            print(fp.read())
         sys.exit(1)
 
     def run_script(self, basename):
@@ -58,9 +59,9 @@ class ToGoer(object):
         if script == '': return
         cmd = 'source ' + script
         if self.test_mode:
-            print 'Would now run \'{0}\''.format(cmd)
-            print 'Contents of {0}:\n'.format(script)
+            print('Would now run \'{0}\''.format(cmd))
+            print('Contents of {0}:\n'.format(script))
             with open(script, 'r') as fp:
-                print fp.read()
+                print(fp.read())
         else:
             os.system(cmd)

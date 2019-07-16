@@ -1,3 +1,4 @@
+from __future__ import print_function
 from setuptools import setup
 
 setup(
@@ -15,6 +16,6 @@ setup(
         ],
     )
 
-print 'Add the following lines to your .bashrc'
-print '[ -f /Users/thomas/packages/toscript/completion.py ] && complete -C /Users/thomas/packages/toscript/completion.py to'
-print 'alias to=". /Users/thomas/packages/toscript/to.sh"'
+print('Add the following lines to your .bashrc')
+print('[ -f <PACKAGE_DIR>/toscript/completion.py ] && complete -C <PACKAGE_DIR>/toscript/completion.py to')
+print('alias to=". <PACKAGE_DIR>/toscript/to.sh"')
