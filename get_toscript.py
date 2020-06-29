@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from __future__ import print_function
 import os
 import glob
@@ -65,3 +66,20 @@ class ToGoer(object):
                 print(fp.read())
         else:
             os.system(cmd)
+
+
+if __name__ == '__main__':
+    import argparse
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('script_basename', type=str, help='basename of the script to execute' )
+    parser.add_argument('--test', action='store_true', help='does not execute the script, prints info instead')
+    args = parser.parse_args()
+
+    goer = ToGoer()
+    script = goer.get_script(args.script_basename)
+
+    if args.test:
+        goer.print_contents(script)
+    else:
+        print(script)
