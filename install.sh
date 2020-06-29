@@ -21,10 +21,10 @@ install() {
         echo $L2
         echo $L3
 
-        echo "" > ~/.bashrc
-        echo "$L1" > ~/.bashrc
-        echo "$L2" > ~/.bashrc
-        echo "$L3" > ~/.bashrc
+        echo "" >> ~/.bashrc
+        echo "$L1" >> ~/.bashrc
+        echo "$L2" >> ~/.bashrc
+        echo "$L3" >> ~/.bashrc
         )
     }
 
