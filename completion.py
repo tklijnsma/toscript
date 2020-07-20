@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 
 import sys
-import toscript
+from get_toscript import ToGoer
 
 class Completer(object):
     """docstring for Completer"""
     def __init__(self):
         super(Completer, self).__init__()
-        self.goer = toscript.ToGoer()
+        self.goer = ToGoer()
 
     def completion_hook(self, cmd, curr_word, prev_word):
         if not self.goer.exists_toscriptdir():
